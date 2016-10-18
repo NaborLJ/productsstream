@@ -24,7 +24,7 @@ public class Productsstream {
          DataOutputStream write= new DataOutputStream(new FileOutputStream (texto));
          write.writeUTF(po1.getCodigo());
          write.writeUTF(po1.getDescricion());
-         write.write(po1.getPrezo());
+         write.writeInt(po1.getPrezo());
          write.writeUTF(po2.getCodigo());
          write.writeUTF(po2.getDescricion());
          
@@ -33,7 +33,7 @@ public class Productsstream {
          DataInputStream read=new DataInputStream(new FileInputStream(texto));   
          po3.setCodigo(read.readUTF());
          po3.setDescricion(read.readUTF());
-         po3.setPrezo(read.read());
+         po3.setPrezo(read.readInt());
          System.out.println(po3.getCodigo());
          System.out.println(po3.getDescricion());
          System.out.println(po3.getPrezo());
